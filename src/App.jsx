@@ -1,6 +1,30 @@
 import Hero from './components/Hero.jsx';
 import './App.css';
 
+const projects = [
+  {
+    id: 1,
+    title: 'Personal Page',
+    description: 'Учебная личная страница с HTML, CSS и JavaScript.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    status: 'completed',
+  },
+  {
+    id: 2,
+    title: 'Users Catalog',
+    description: 'Каталог пользователей с загрузкой данных, поиском и избранным.',
+    technologies: ['JavaScript', 'API', 'localStorage'],
+    status: 'completed',
+  },
+  {
+    id: 3,
+    title: 'Dev Projects Dashboard',
+    description: 'React-приложение для отслеживания учебных и портфолио-проектов.',
+    technologies: ['React', 'Vite', 'CSS'],
+    status: 'in-progress',
+  },
+];
+
 function App() {
 
   return (
