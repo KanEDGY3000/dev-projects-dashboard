@@ -124,6 +124,24 @@
   border-radius: 999px;
 }
 
+.project-card__status--completed {
+  color: #bbf7d0;
+  background-color: rgb(34 197 94 / 0.14);
+  border-color: rgb(74 222 128 / 0.28);
+}
+
+.project-card__status--in-progress {
+  color: #bfdbfe;
+  background-color: rgb(59 130 246 / 0.16);
+  border-color: rgb(96 165 250 / 0.3);
+}
+
+.project-card__status--planned {
+  color: #fde68a;
+  background-color: rgb(234 179 8 / 0.14);
+  border-color: rgb(250 204 21 / 0.28);
+}
+
 .project-card__description {
   margin: 0;
   line-height: 1.6;
