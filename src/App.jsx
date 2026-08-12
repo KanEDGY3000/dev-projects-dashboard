@@ -1,4 +1,5 @@
 import Hero from './components/Hero.jsx';
+import ProjectsList from './components/ProjectList.jsx';
 import './App.css';
 
 const projects = [
@@ -30,6 +31,7 @@ function App() {
   return (
     <main className='app'>
       <Hero />
+      <ProjectsList project={projects} />
     </main>
   );
 }
