@@ -197,3 +197,37 @@
   background-color: rgb(14 165 233 / 0.24);
   transform: translateY(-2px);
 }
+
+.status-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.status-filter {
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #cbd5e1;
+  background-color: rgb(15 23 42 / 0.8);
+  border: 1px solid rgb(148 163 184 / 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.status-filter:hover {
+  color: #e0f2fe;
+  border-color: rgb(56 189 248 / 0.36);
+  transform: translateY(-2px);
+}
+
+.status-filter--active {
+  color: #020617;
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+}

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Hero from './components/Hero.jsx';
 import ProjectsList from './components/ProjectList.jsx';
 import './App.css';
@@ -38,11 +39,20 @@ const projects = [
 ];
 
 function App() {
+  const [selectedStatus, setSelectedStatus] = useState('all');
+
+  const filteredProjects = selectedStatus === 'all'
+    ? projects
+    : projects.filter((projects) => projects.status === selectedStatus);
 
   return (
     <main className='app'>
       <Hero />
-      <ProjectsList project={projects} />
+      <ProjectsList
+        project={filteredProjects}
+        selectedStatus={selectedStatus}
+        onStatusChange={setSelectedStatus}
+      />
     </main>
   );
 }
