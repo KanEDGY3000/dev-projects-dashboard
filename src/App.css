@@ -6,7 +6,7 @@
 }
 
 .hero {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 48px;
   background-color: (15 23 42 / 0.82);
@@ -230,4 +230,45 @@
   color: #020617;
   background-color: #38bdf8;
   border-color: #38bdf8;
+}
+
+.project-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 32px auto 0;
+}
+
+.project-stat {
+  padding: 24px;
+  background-color: rgb(15 23 42 / 0.72);
+  border: 1px solid rgb(148 163 184 / 0.18);
+  border-radius: 22px;
+}
+
+.project-stat__value {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.project-stat__label {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+  .project-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .project-stats {
+    grid-template-columns: 1fr;
+  }
 }
