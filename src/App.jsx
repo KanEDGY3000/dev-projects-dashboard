@@ -24,6 +24,13 @@ const projects = [
     technologies: ['React', 'Vite', 'CSS'],
     status: 'in-progress',
   },
+  {
+  id: 4,
+  title: 'Weather App',
+  description: 'Будущее приложение прогноза погоды с загрузкой данных из API.',
+  technologies: ['React', 'API', 'CSS'],
+  status: 'planned',
+},
 ];
 
 function App() {

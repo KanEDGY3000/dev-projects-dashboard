@@ -3,7 +3,6 @@ function Hero() {
     const developerName = 'KanEDGY3000';
 
     return (
-        <main className='app'>
             <section className='hero'>
                 <p className='eyebrow'>React portfolio project</p>
 
@@ -13,7 +12,6 @@ function Hero() {
 
                 <p className='developer'>Автор проекта: {developerName}</p>
             </section>
-        </main>
     );
 }
 
