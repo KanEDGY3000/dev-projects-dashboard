@@ -9,6 +9,7 @@ const projects = [
     description: 'Учебная личная страница с HTML, CSS и JavaScript.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     status: 'completed',
+    // repoUrl: 'KanEDGY3000',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const projects = [
     description: 'Каталог пользователей с загрузкой данных, поиском и избранным.',
     technologies: ['JavaScript', 'API', 'localStorage'],
     status: 'completed',
+    // repoUrl: 'KanEDGY3000',
   },
   {
     id: 3,
@@ -23,14 +25,16 @@ const projects = [
     description: 'React-приложение для отслеживания учебных и портфолио-проектов.',
     technologies: ['React', 'Vite', 'CSS'],
     status: 'in-progress',
+    repoUrl: 'https://github.com/KanEDGY3000/dev-projects-dashboard',
   },
   {
-  id: 4,
-  title: 'Weather App',
-  description: 'Будущее приложение прогноза погоды с загрузкой данных из API.',
-  technologies: ['React', 'API', 'CSS'],
-  status: 'planned',
-},
+    id: 4,
+    title: 'Weather App',
+    description: 'Будущее приложение прогноза погоды с загрузкой данных из API.',
+    technologies: ['React', 'API', 'CSS'],
+    status: 'planned',
+    // repoUrl: 'KanEDGY3000',
+  },
 ];
 
 function App() {

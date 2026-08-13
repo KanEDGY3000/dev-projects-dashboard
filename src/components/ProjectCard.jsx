@@ -32,6 +32,16 @@ function ProjectsCard({ project }) {
                 ))}
             </ul>
 
+            {project.repoUrl && (
+                <a
+                    className="project-card__link"
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Открыть GitHub
+                </a>)}
+
         </article>
     );
 }

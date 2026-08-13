@@ -175,3 +175,25 @@
     border-radius: 20px;
   }
 }
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #e0f2fe;
+  text-decoration: none;
+  background-color: rgb(14 165 233 / 0.14);
+  border: 1px solid rgb(56 189 248 / 0.28);
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-card__link:hover {
+  background-color: rgb(14 165 233 / 0.24);
+  transform: translateY(-2px);
+}
