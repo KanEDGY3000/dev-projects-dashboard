@@ -1,23 +1,5 @@
 import ProjectsCard from "./ProjectCard.jsx";
-
-const statusFilters = [
-    {
-        value: 'all',
-        label: 'Все',
-    },
-    {
-        value: 'completed',
-        label: 'Завершенные',
-    },
-    {
-        value: 'in-progress',
-        label: 'В работе',
-    },
-    {
-        value: 'planned',
-        label: 'Запланированные',
-    },
-]
+import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses.js";
 
 function ProjectsList({ project, selectedStatus, onStatusChange, }) {
     return (
@@ -32,7 +14,7 @@ function ProjectsList({ project, selectedStatus, onStatusChange, }) {
             </div>
 
             <div className="status-filters" aria-label="Фильтр проектов по статусу">
-                {statusFilters.map((filter) => (
+                {PROJECT_STATUS_FILTERS.map((filter) => (
                     <button
                         className={
                             selectedStatus === filter.value

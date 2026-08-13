@@ -1,17 +1,19 @@
 
+import { PROJECT_STATUSES } from "../data/projectStatuses";
+
 function ProjectStats({ projects }) {
     const totalProjects = projects.length;
 
     const completedProjects = projects.filter(
-        (project) => project.status === 'completed'
+        (project) => project.status === PROJECT_STATUSES.completed
     ).length;
 
     const inProgressProjects = projects.filter(
-        (project) => project.status === 'in-progress'
+        (project) => project.status === PROJECT_STATUSES.inProgress
     ).length;
 
     const plannedProject = projects.filter(
-        (project) => project.status === 'planned'
+        (project) => project.status === PROJECT_STATUSES.planned
     ).length;
 
     return (
