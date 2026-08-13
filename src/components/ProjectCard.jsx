@@ -1,18 +1,5 @@
-function getStatusLabel(status) {
-    if (status === 'completed') {
-        return 'Завершен';
-    }
 
-    if (status === 'in-progress') {
-        return 'В работе';
-    }
-
-    if (status === 'planned') {
-        return 'Запланирован';
-    }
-
-    return 'Без статуса';
-}
+import { PROJECT_STATUS_LABELS } from "../data/projectStatuses";
 
 function ProjectsCard({ project }) {
     return (
@@ -20,7 +7,7 @@ function ProjectsCard({ project }) {
             <div className="project-card__header">
                 <h3>{project.title}</h3>
                 <span className={`project-card__status project-card__status--${project.status}`}>
-                    {getStatusLabel(project.status)}
+                    {PROJECT_STATUS_LABELS[project.status] || 'Без статуса'}
                 </span>
             </div>
 
