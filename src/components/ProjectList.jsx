@@ -1,8 +1,9 @@
 import ProjectsCard from "./ProjectCard.jsx";
 import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses.js";
+import { projects } from "../data/projects.js";
 
 function ProjectsList({
-    project,
+    projects,
     selectedStatus,
     onStatusChange,
     isCompactView,
@@ -36,7 +37,7 @@ function ProjectsList({
                 ))}
             </div>
 
-            <button 
+            <button
                 className="view-toggle"
                 type="button"
                 onClick={onViewToggle}
@@ -44,15 +45,22 @@ function ProjectsList({
                 {isCompactView ? 'Обычный вид' : 'Компактный вид'}
             </button>
 
-            <div className="projects-grid">
-                {project.map((project) => (
-                    <ProjectsCard
-                        key={project.id}
-                        project={project}
-                        isCompactView={isCompactView}
-                    />
-                ))}
-            </div>
+            {projects.length > 0 ? (
+                <div className="projects-grid">
+                    {projects.map((project) => (
+                        <ProjectsCard
+                            key={project.id}
+                            project={project}
+                            isCompactView={isCompactView}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <p className="empty-message">
+                    Проекты не найдены
+                </p>
+            )}
+
         </section>
     );
 }

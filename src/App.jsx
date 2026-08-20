@@ -23,7 +23,7 @@ function App() {
       <Hero />
       <ProjectStats projects={projects} />
       <ProjectsList
-        project={filteredProjects}
+        projects={filteredProjects}
         selectedStatus={selectedStatus}
         onStatusChange={setSelectedStatus}
         isCompactView={isCompactView}
