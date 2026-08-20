@@ -9,6 +9,7 @@ export const projects = [
         technologies: ['HTML', 'CSS', 'JavaScript'],
         status: PROJECT_STATUSES.completed,
         // repoUrl: 'KanEDGY3000',
+        featured: false,
     },
     {
         id: 2,
@@ -17,6 +18,7 @@ export const projects = [
         technologies: ['JavaScript', 'API', 'localStorage'],
         status: PROJECT_STATUSES.completed,
         // repoUrl: 'KanEDGY3000',
+        featured: false,
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ export const projects = [
         technologies: ['React', 'Vite', 'CSS'],
         status: PROJECT_STATUSES.inProgress,
         repoUrl: 'https://github.com/KanEDGY3000/dev-projects-dashboard',
+        featured: true,
     },
     {
         id: 4,
@@ -33,5 +36,6 @@ export const projects = [
         technologies: ['React', 'API', 'CSS'],
         status: PROJECT_STATUSES.planned,
         // repoUrl: 'KanEDGY3000',
+        featured: true,
     },
 ];
