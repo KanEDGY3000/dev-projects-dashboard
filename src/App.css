@@ -198,6 +198,11 @@
   transform: translateY(-2px);
 }
 
+.project-card__link--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .status-filters {
   display: flex;
   flex-wrap: wrap;

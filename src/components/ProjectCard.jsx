@@ -17,7 +17,7 @@ function ProjectsCard({ project, isCompactView }) {
             {!isCompactView && (
                 <p className="project-card__description">{project.description}</p>
             )}
-            
+
 
             <ul className="project-card__technologies">
                 {project.technologies.map((technology) => (
@@ -25,7 +25,7 @@ function ProjectsCard({ project, isCompactView }) {
                 ))}
             </ul>
 
-            {project.repoUrl && (
+            {project.repoUrl ? (
                 <a
                     className="project-card__link"
                     href={project.repoUrl}
@@ -33,7 +33,14 @@ function ProjectsCard({ project, isCompactView }) {
                     rel="noreferrer"
                 >
                     Открыть GitHub
-                </a>)}
+                </a>) : (
+                <span
+                    className="project-card__link 
+                    project-card__link--disabled"
+                >
+                    Репозиторий недоступен
+                </span>
+            )}
 
         </article>
     );
