@@ -272,3 +272,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+.view-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #020617;
+  background-color: #e0f2fe;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.view-toggle:hover {
+  background-color: #bae6fd;
+  transform: translateY(-2px);
+}
+
+.project-card--compact {
+  min-height: auto;
+  gap: 12px;
+  padding: 18px;
+}
+
+.project-card--compact .project-card__technologies {
+  margin-top: 0;
+}

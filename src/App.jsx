@@ -8,10 +8,15 @@ import { PROJECT_STATUSES } from './data/projectStatuses.js';
 
 function App() {
   const [selectedStatus, setSelectedStatus] = useState(PROJECT_STATUSES.all);
+  const [isCompactView, setIsCompactView] = useState(false);
 
   const filteredProjects = selectedStatus === PROJECT_STATUSES.all
     ? projects
     : projects.filter((projects) => projects.status === selectedStatus);
+
+  function handleViewToggle() {
+    setIsCompactView((currentValue) => !currentValue);
+  }
 
   return (
     <main className='app'>
@@ -21,6 +26,8 @@ function App() {
         project={filteredProjects}
         selectedStatus={selectedStatus}
         onStatusChange={setSelectedStatus}
+        isCompactView={isCompactView}
+        onViewToggle={handleViewToggle}
       />
     </main>
   );

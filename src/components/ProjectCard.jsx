@@ -1,9 +1,12 @@
 
 import { PROJECT_STATUS_LABELS } from "../data/projectStatuses";
 
-function ProjectsCard({ project }) {
+function ProjectsCard({ project, isCompactView }) {
     return (
-        <article className="project-card">
+        <article
+            className={isCompactView
+                ? 'project-card project-card--compact'
+                : 'project-card'}>
             <div className="project-card__header">
                 <h3>{project.title}</h3>
                 <span className={`project-card__status project-card__status--${project.status}`}>
@@ -11,7 +14,10 @@ function ProjectsCard({ project }) {
                 </span>
             </div>
 
-            <p className="project-card__description">{project.description}</p>
+            {!isCompactView && (
+                <p className="project-card__description">{project.description}</p>
+            )}
+            
 
             <ul className="project-card__technologies">
                 {project.technologies.map((technology) => (
