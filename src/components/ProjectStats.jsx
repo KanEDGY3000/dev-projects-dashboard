@@ -1,5 +1,5 @@
 
-import { PROJECT_STATUSES } from "../data/projectStatuses";
+import { PROJECT_STATUSES } from "../data/projectStatuses.js";
 
 function ProjectStats({ projects }) {
     const totalProjects = projects.length;

@@ -1,5 +1,5 @@
 
-import { PROJECT_STATUS_LABELS } from "../data/projectStatuses";
+import { PROJECT_STATUS_LABELS } from "../data/projectStatuses.js";
 
 function ProjectsCard({ project, isCompactView }) {
     return (
@@ -34,10 +34,7 @@ function ProjectsCard({ project, isCompactView }) {
                 >
                     Открыть GitHub
                 </a>) : (
-                <span
-                    className="project-card__link 
-                    project-card__link--disabled"
-                >
+                <span className="project-card__link project-card__link--disabled">
                     Репозиторий недоступен
                 </span>
             )}
