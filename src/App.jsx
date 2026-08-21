@@ -5,6 +5,7 @@ import './App.css';
 import { projects } from './data/projects.js';
 import ProjectStats from './components/ProjectStats.jsx';
 import { PROJECT_STATUSES } from './data/projectStatuses.js';
+import GitHubRepoInfo from './components/GitHubRepoInfo.jsx';
 
 const SELECTED_STATUS_KEY = 'selectedStatus';
 const COMPACT_VIEW_KEY = 'isCompactView';
@@ -37,6 +38,7 @@ function App() {
     <main className='app'>
       <Hero />
       <ProjectStats projects={projects} />
+      <GitHubRepoInfo />
       <ProjectsList
         projects={filteredProjects}
         selectedStatus={selectedStatus}
