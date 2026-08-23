@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
-const REPO_API_URL =
-    'https://api.github.com/repos/KanEDGY3000/dev-projects-dashboard';
+import { fetchRepositoryInfo } from "../api/github.js";
 
 function GitHubRepoInfo() {
     const [repo, setRepo] = useState(null);
@@ -14,13 +12,7 @@ function GitHubRepoInfo() {
                 setIsLoading(true);
                 setErrorMessage('');
 
-                const response = await fetch(REPO_API_URL);
-
-                if (!response.ok) {
-                    throw new Error('Не удалось загрузить данные репозитория.');
-                }
-
-                const data = await response.json();
+                const data = await fetchRepositoryInfo();
 
                 setRepo(data);
             } catch (error) {
