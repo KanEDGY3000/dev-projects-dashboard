@@ -38,7 +38,9 @@ function App() {
     <main className='app'>
       <Hero />
       <ProjectStats projects={projects} />
-      <GitHubRepoInfo />
+      <GitHubRepoInfo
+        owner='KanEDGY3000'
+        repoName='dev-projects-dashboard' />
       <ProjectsList
         projects={filteredProjects}
         selectedStatus={selectedStatus}

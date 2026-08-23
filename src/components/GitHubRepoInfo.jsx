@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchRepositoryInfo } from "../api/github.js";
 
-function GitHubRepoInfo() {
+function GitHubRepoInfo({owner, repoName}) {
     const [repo, setRepo] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
@@ -12,10 +12,7 @@ function GitHubRepoInfo() {
                 setIsLoading(true);
                 setErrorMessage('');
 
-                const data = await fetchRepositoryInfo(
-                    'KanEDGY3000',
-                    'dev-projects-dashboard'
-                );
+                const data = await fetchRepositoryInfo(owner, repoName);
 
                 setRepo(data);
             } catch (error) {
@@ -26,7 +23,7 @@ function GitHubRepoInfo() {
         }
 
         loadRepo();
-    }, []);
+    }, [owner, repoName]);
 
     return (
         <section className="repo-info">
