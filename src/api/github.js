@@ -1,8 +1,10 @@
-const REPO_API_URL = 
-    'https://api.github.com/repos/KanEDGY3000/dev-projects-dashboard';
+const GITHUB_API_BASE_URL = 
+    'https://api.github.com';
 
-export async function fetchRepositoryInfo() {
-    const response = await fetch(REPO_API_URL);
+export async function fetchRepositoryInfo(owner, repoName) {
+    const response = await fetch(
+        `${GITHUB_API_BASE_URL}/repos/${owner}/${repoName}`
+    );
 
     if (!response.ok) {
         throw new Error('Не удалось загрузить данные репозитория.')

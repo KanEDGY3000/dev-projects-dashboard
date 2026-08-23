@@ -12,7 +12,10 @@ function GitHubRepoInfo() {
                 setIsLoading(true);
                 setErrorMessage('');
 
-                const data = await fetchRepositoryInfo();
+                const data = await fetchRepositoryInfo(
+                    'KanEDGY3000',
+                    'dev-projects-dashboard'
+                );
 
                 setRepo(data);
             } catch (error) {
