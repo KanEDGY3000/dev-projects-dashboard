@@ -1,35 +1,44 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { fetchRepositoryInfo } from "../api/github.js";
 
-function GitHubRepoInfo({owner, repoName}) {
+function GitHubRepoInfo({ owner, repoName }) {
     const [repo, setRepo] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
 
-    useEffect(() => {
-        async function loadRepo() {
-            try {
-                setIsLoading(true);
-                setErrorMessage('');
+    const loadRepo = useCallback(async () => {
+        try {
+            setIsLoading(true);
+            setErrorMessage('');
 
-                const data = await fetchRepositoryInfo(owner, repoName);
+            const data = await fetchRepositoryInfo(owner, repoName);
 
-                setRepo(data);
-            } catch (error) {
-                setErrorMessage(error.message);
-            } finally {
-                setIsLoading(false);
-            }
+            setRepo(data);
+        } catch (error) {
+            setErrorMessage(error.message);
+        } finally {
+            setIsLoading(false);
         }
-
-        loadRepo();
     }, [owner, repoName]);
+
+    useEffect(() => {
+        loadRepo();
+    }, [loadRepo]);
 
     return (
         <section className="repo-info">
             <p className="eyebrow">GitHubAPI</p>
 
             <h2>Информация о репозитории</h2>
+
+            <button
+                className="repo-info__refresh"
+                type="button"
+                onClick={loadRepo}
+                disabled={isLoading}
+            >
+                {isLoading ? 'Обновляем...' : 'Обновить данные'}
+            </button>
 
             {isLoading && (
                 <p className="repo-info_message">
