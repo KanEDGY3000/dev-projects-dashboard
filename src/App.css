@@ -435,3 +435,58 @@
   cursor: not-allowed;
   opacity: 0.65;
 }
+
+.repo-info__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-top: 24px;
+}
+
+.repo-info__form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.repo-info__form input {
+  width: 100%;
+  padding: 10px 12px;
+  color: #e5e7eb;
+  background-color: rgb(2 6 23 / 0.72);
+  border: 1px solid rgb(148 163 184 / 0.22);
+  border-radius: 12px;
+  outline: none;
+}
+
+.repo-info__form input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgb(56 189 248 / 0.16);
+}
+
+.repo-info__form button {
+  padding: 11px 14px;
+  font-weight: 700;
+  color: #020617;
+  background-color: #e0f2fe;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.repo-info__form button:hover:not(:disabled) {
+  background-color: #bae6fd;
+}
+
+.repo-info__form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+@media (max-width: 760px) {
+  .repo-info__form {
+    grid-template-columns: 1fr;
+  }
+}
