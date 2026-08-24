@@ -5,8 +5,8 @@ function GitHubRepoInfo({ owner, repoName }) {
     const [repo, setRepo] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
-    const [ownerInput, setOwnerInput] = useState(owner);
-    const [repoNameInput, setRepoNameInput] = useState(repoName);
+    const [ownerInput, setOwnerInput] = useState('');
+    const [repoNameInput, setRepoNameInput] = useState('');
     
     const [ activeRepository, setActiveRepository] = useState({
         owner,
