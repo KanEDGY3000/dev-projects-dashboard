@@ -1,17 +1,20 @@
-import { useCallback, useEffect, useState } from "react";
-import { fetchRepositoryInfo } from "../api/github.js";
+import { useCallback, useEffect, useState } from 'react';
+import { fetchRepositoryInfo } from '../api/github.js';
+import RepoSearchForm from './RepoSearchForm.jsx';
+import RepoCard from './RepoCard.jsx';
 
 function GitHubRepoInfo({ owner, repoName }) {
     const [repo, setRepo] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
+
     const [ownerInput, setOwnerInput] = useState('');
     const [repoNameInput, setRepoNameInput] = useState('');
-    
-    const [ activeRepository, setActiveRepository] = useState({
+
+    const [activeRepository, setActiveRepository] = useState({
         owner,
-        repoName
-    })
+        repoName,
+    });
 
     const loadRepo = useCallback(async () => {
         try {
@@ -25,11 +28,16 @@ function GitHubRepoInfo({ owner, repoName }) {
 
             setRepo(data);
         } catch (error) {
+            setRepo(null);
             setErrorMessage(error.message);
         } finally {
             setIsLoading(false);
         }
     }, [activeRepository]);
+
+    useEffect(() => {
+        loadRepo();
+    }, [loadRepo]);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -38,51 +46,30 @@ function GitHubRepoInfo({ owner, repoName }) {
         const trimmedRepoName = repoNameInput.trim();
 
         if (!trimmedOwner || !trimmedRepoName) {
-            setErrorMessage('Заполни owner и название проекта');
+            setErrorMessage('Заполни owner и название репозитория.');
             return;
         }
 
         setActiveRepository({
             owner: trimmedOwner,
-            repoName: trimmedRepoName
+            repoName: trimmedRepoName,
         });
-    } 
-
-    useEffect(() => {
-        loadRepo();
-    }, [loadRepo]);
+    }
 
     return (
         <section className="repo-info">
-            <p className="eyebrow">GitHubAPI</p>
+            <p className="eyebrow">GitHub API</p>
 
             <h2>Информация о репозитории</h2>
 
-            <form className="repo-info__form" onSubmit={handleSubmit}>
-                <label>
-                    Owner
-                    <input
-                        type="text"
-                        value={ownerInput}
-                        onChange={(event) => setOwnerInput(event.target.value)}
-                        placeholder="Например: facebook" 
-                    />
-                </label>
-
-                <label>
-                    Repository
-                    <input 
-                        type="text"
-                        value={repoNameInput}
-                        onChange={(event) => setRepoNameInput(event.target.value)}
-                        placeholder="Например: react"
-                    /> 
-                </label>
-
-                <button type="submit" disabled={isLoading}>
-                    {isLoading ? 'Загружаем...' : 'Загрузить'}
-                </button>
-            </form>
+            <RepoSearchForm
+                ownerInput={ownerInput}
+                repoNameInput={repoNameInput}
+                onOwnerInputChange={setOwnerInput}
+                onRepoNameInputChange={setRepoNameInput}
+                onSubmit={handleSubmit}
+                isLoading={isLoading}
+            />
 
             <button
                 className="repo-info__refresh"
@@ -94,7 +81,7 @@ function GitHubRepoInfo({ owner, repoName }) {
             </button>
 
             {isLoading && (
-                <p className="repo-info_message">
+                <p className="repo-info__message">
                     Загружаем данные репозитория...
                 </p>
             )}
@@ -106,18 +93,7 @@ function GitHubRepoInfo({ owner, repoName }) {
             )}
 
             {repo && !isLoading && !errorMessage && (
-                <div className="repo-info__stats">
-                    <h3>{repo.name}</h3>
-
-                    <p>
-                        {repo.description || 'Описание репозитория не добавлено'}
-                    </p>
-
-                    <div className="repo-info__stats">
-                        <span>⭐ Stars: {repo.stargazers_count}</span>
-                        <span>⑂ Forks: {repo.forks_count}</span>
-                    </div>
-                </div>
+                <RepoCard repo={repo} />
             )}
         </section>
     );
