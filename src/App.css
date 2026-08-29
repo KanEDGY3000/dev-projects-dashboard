@@ -490,3 +490,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+.repo-info__current {
+  margin: 12px 0 0;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.repo-info__current strong {
+  color: #e0f2fe;
+}

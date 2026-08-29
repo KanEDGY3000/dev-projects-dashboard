@@ -62,23 +62,9 @@ function GitHubRepoInfo({ owner, repoName }) {
 
             <h2>Информация о репозитории</h2>
 
-            <RepoSearchForm
-                ownerInput={ownerInput}
-                repoNameInput={repoNameInput}
-                onOwnerInputChange={setOwnerInput}
-                onRepoNameInputChange={setRepoNameInput}
-                onSubmit={handleSubmit}
-                isLoading={isLoading}
-            />
-
-            <button
-                className="repo-info__refresh"
-                type="button"
-                onClick={loadRepo}
-                disabled={isLoading}
-            >
-                {isLoading ? 'Обновляем...' : 'Обновить данные'}
-            </button>
+            <p className='repo-info__current'>
+                Сейчас открыт: {activeRepository.owner} / {activeRepository.repoName}
+            </p>
 
             {isLoading && (
                 <p className="repo-info__message">
@@ -95,6 +81,28 @@ function GitHubRepoInfo({ owner, repoName }) {
             {repo && !isLoading && !errorMessage && (
                 <RepoCard repo={repo} />
             )}
+
+            <button
+                className="repo-info__refresh"
+                type="button"
+                onClick={loadRepo}
+                disabled={isLoading}
+            >
+                {isLoading ? 'Обновляем...' : 'Обновить данные'}
+            </button>
+
+            <div className='repo-info__manual'>
+                <h3>Загрузить другой репозиторий</h3>
+
+                <RepoSearchForm
+                ownerInput={ownerInput}
+                repoNameInput={repoNameInput}
+                onOwnerInputChange={setOwnerInput}
+                onRepoNameInputChange={setRepoNameInput}
+                onSubmit={handleSubmit}
+                isLoading={isLoading}
+                />
+            </div>
         </section>
     );
 }
