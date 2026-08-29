@@ -54,6 +54,9 @@ function GitHubRepoInfo({ owner, repoName }) {
             owner: trimmedOwner,
             repoName: trimmedRepoName,
         });
+
+        setOwnerInput('');
+        setRepoNameInput('');
     }
 
     return (
