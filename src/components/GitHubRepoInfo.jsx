@@ -10,6 +10,10 @@ function GitHubRepoInfo({ owner, repoName }) {
 
     const [ownerInput, setOwnerInput] = useState('');
     const [repoNameInput, setRepoNameInput] = useState('');
+    const isSearchDisabled = 
+        isLoading ||
+        ownerInput.trim() === '' ||
+        repoNameInput.trim() === '';
 
     const [activeRepository, setActiveRepository] = useState({
         owner,
@@ -46,7 +50,6 @@ function GitHubRepoInfo({ owner, repoName }) {
         const trimmedRepoName = repoNameInput.trim();
 
         if (!trimmedOwner || !trimmedRepoName) {
-            setErrorMessage('Заполни owner и название репозитория.');
             return;
         }
 
@@ -104,6 +107,7 @@ function GitHubRepoInfo({ owner, repoName }) {
                 onRepoNameInputChange={setRepoNameInput}
                 onSubmit={handleSubmit}
                 isLoading={isLoading}
+                isSearchDisabled={isSearchDisabled}
                 />
             </div>
         </section>

@@ -5,6 +5,7 @@ function RepoSearchForm({
     onRepoNameInputChange,
     onSubmit,
     isLoading,
+    isSearchDisabled,
 }) {
     return (
         <form className="repo-info__form" onSubmit={onSubmit}>
@@ -28,7 +29,7 @@ function RepoSearchForm({
                 />
             </label>
 
-            <button type="submit" disabled={isLoading}>
+            <button type="submit" disabled={isSearchDisabled}>
                 {isLoading ? 'Загружаем...' : 'Загрузить'}
             </button>
         </form>
