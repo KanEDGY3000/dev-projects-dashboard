@@ -1,47 +1,29 @@
-import { useCallback, useEffect, useState } from 'react';
-import { fetchRepositoryInfo } from '../api/github.js';
+import { useState } from 'react';
+import { useRepositoryInfo } from '../hooks/useRepositoryInfo.js';
 import RepoSearchForm from './RepoSearchForm.jsx';
 import RepoCard from './RepoCard.jsx';
 
 function GitHubRepoInfo({ owner, repoName }) {
-    const [repo, setRepo] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [errorMessage, setErrorMessage] = useState('');
-
+    
     const [ownerInput, setOwnerInput] = useState('');
     const [repoNameInput, setRepoNameInput] = useState('');
-    const isSearchDisabled = 
-        isLoading ||
-        ownerInput.trim() === '' ||
-        repoNameInput.trim() === '';
 
     const [activeRepository, setActiveRepository] = useState({
         owner,
         repoName,
     });
 
-    const loadRepo = useCallback(async () => {
-        try {
-            setIsLoading(true);
-            setErrorMessage('');
+    const {
+        repo,
+        isLoading,
+        errorMessage,
+        loadRepo,
+    } = useRepositoryInfo(activeRepository);
 
-            const data = await fetchRepositoryInfo(
-                activeRepository.owner,
-                activeRepository.repoName
-            );
-
-            setRepo(data);
-        } catch (error) {
-            setRepo(null);
-            setErrorMessage(error.message);
-        } finally {
-            setIsLoading(false);
-        }
-    }, [activeRepository]);
-
-    useEffect(() => {
-        loadRepo();
-    }, [loadRepo]);
+    const isSearchDisabled = 
+        isLoading ||
+        ownerInput.trim() === '' ||
+        repoNameInput.trim() === '';
 
     function handleSubmit(event) {
         event.preventDefault();
