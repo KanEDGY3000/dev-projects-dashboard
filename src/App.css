@@ -9,7 +9,7 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 48px;
-  background-color: (15 23 42 / 0.82);
+  background-color: rgb(15 23 42 / 0.82);
   border: 1px solid rgb(148 163 184 / 0.22);
   border-radius: 28px;
   box-shadow: 0 24px 80px rgb(0 0 0 / 0.35);
@@ -27,7 +27,7 @@
 .hero h1 {
   max-width: 640px;
   margin: 0;
-  font-size: clamp(36px, 7vm, 72px);
+  font-size: clamp(36px, 7vw, 72px);
   line-height: 0.95;
 }
 
@@ -202,7 +202,7 @@
     transform 0.2s ease;
 }
 
-.project-card__link:hover {
+.project-card__link:not(.project-card__link--disabled):hover {
   background-color: rgb(14 165 233 / 0.24);
   transform: translateY(-2px);
 }
@@ -252,11 +252,12 @@
   gap: 16px;
   max-width: 1100px;
   margin: 32px auto 0;
-  justify-items: center
 }
 
 .project-stat {
+  width: 100%;
   padding: 24px;
+  text-align: center;
   background-color: rgb(15 23 42 / 0.72);
   border: 1px solid rgb(148 163 184 / 0.18);
   border-radius: 22px;
@@ -267,7 +268,6 @@
   font-size: 40px;
   font-weight: 800;
   color: #f8fafc;
-  justify-self: center;
 }
 
 .project-stat__label {

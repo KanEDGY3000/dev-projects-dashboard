@@ -15,7 +15,9 @@ function ProjectsList({
                 eyebrow="Portfolio progress"
                 title="Проекты"
             >
-                Здесь собраны учебные и портфолио-проеты, которые показывают рост frontend-навыков
+                <p>
+                    Здесь собраны учебные и портфолио-проекты, которые показывают рост frontend-навыков
+                </p>
             </SectionHeader>
 
             <ProjectStatusFilters
