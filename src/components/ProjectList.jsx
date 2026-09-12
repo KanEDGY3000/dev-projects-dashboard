@@ -1,7 +1,6 @@
 import ProjectsCard from "./ProjectCard.jsx";
 import ProjectStatusFilters from "./ProjectStatusFilters.jsx";
 import SectionHeader from "./SectionHeader.jsx";
-import { projects } from "../data/projects.js";
 
 function ProjectsList({
     projects,
@@ -13,8 +12,8 @@ function ProjectsList({
     return (
         <section className="projects-section">
             <SectionHeader
-                eyebrow="GitHub API"
-                title="Информация о репозитории"
+                eyebrow="Portfolio progress"
+                title="Проекты"
             >
                 Здесь собраны учебные и портфолио-проеты, которые показывают рост frontend-навыков
             </SectionHeader>

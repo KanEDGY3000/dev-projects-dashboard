@@ -1,5 +1,5 @@
 
-import { PROJECT_STATUSES } from "./projectStatuses";
+import { PROJECT_STATUSES } from "./projectStatuses.js";
 
 export const projects = [
     {

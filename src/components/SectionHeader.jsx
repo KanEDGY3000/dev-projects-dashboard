@@ -7,7 +7,7 @@ function SectionHeader({ eyebrow, title, children }) {
             <h2>{title}</h2>
 
             {children && (
-                <div>
+                <div className="section-header__description">
                     {children}
                 </div>
             )}

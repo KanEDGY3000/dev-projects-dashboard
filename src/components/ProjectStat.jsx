@@ -1,7 +1,7 @@
 
 function ProjectStat ( { value, label}) {
     return (
-        <article className="project-stat__value">
+        <article className="project-stat">
             <span className="project-stat__value">
                 {value}
             </span>

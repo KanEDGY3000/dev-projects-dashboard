@@ -1,5 +1,5 @@
 
-import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses";
+import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses.js";
 
 function ProjectStatusFilters({
     selectedStatus,

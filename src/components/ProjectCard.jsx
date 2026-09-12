@@ -1,5 +1,4 @@
 
-import { projects } from "../data/projects.js";
 import { PROJECT_STATUS_LABELS } from "../data/projectStatuses.js";
 
 function ProjectsCard({ project, isCompactView }) {
@@ -8,20 +7,21 @@ function ProjectsCard({ project, isCompactView }) {
             className={isCompactView
                 ? 'project-card project-card--compact'
                 : 'project-card'}>
+
             <div className="project-card__header">
                 <h3>{project.title}</h3>
 
-                <div className="project-card__bages">
+                <div className="project-card__badges">
                     {project.featured && (
                         <span className="project-card__featured">
                             Featured
                         </span>
                     )}
-                </div>
 
-                <span className={`project-card__status project-card__status--${project.status}`}>
-                    {PROJECT_STATUS_LABELS[project.status] || 'Без статуса'}
-                </span>
+                    <span className={`project-card__status project-card__status--${project.status}`}>
+                        {PROJECT_STATUS_LABELS[project.status] || 'Без статуса'}
+                    </span>
+                </div>
             </div>
 
             {!isCompactView && (
