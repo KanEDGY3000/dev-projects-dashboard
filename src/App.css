@@ -284,13 +284,19 @@
 .status-filter:hover {
   color: #e0f2fe;
   border-color: rgb(56 189 248 / 0.36);
+  background-color: rgb(56 189 248 / 0.36);
   transform: translateY(-2px);
 }
 
 .status-filter--active {
-  color: #020617;
-  background-color: #38bdf8;
-  border-color: #38bdf8;
+  color: #f8fafc;
+  background-color: rgb(14 165 233 / 0.16);
+  border-color: rgb(56 189 248 / 0.36);
+}
+
+.status-filter--active:hover,
+.status-filter--active:focus-visible {
+  color: #f8fafc;
 }
 
 .view-toggle {
