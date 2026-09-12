@@ -27,6 +27,9 @@ export function useRepositoryInfo(activeRepository) {
     }, [activeRepository]);
 
     useEffect(() => {
+        // Загружаем данные из внешнего API при первом рендере
+        // и при смене активного репозитория.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         loadRepo();
     }, [loadRepo]);
 
