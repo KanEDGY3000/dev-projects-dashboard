@@ -53,7 +53,10 @@ function GitHubRepoInfo({ owner, repoName }) {
             />
 
             <p className='repo-info__current'>
-                Сейчас открыт: {activeRepository.owner} / {activeRepository.repoName}
+                Сейчас открыт:{' '}
+                <strong>
+                    {activeRepository.owner} / {activeRepository.repoName}
+                </strong>
             </p>
 
             {isLoading && (
@@ -68,7 +71,7 @@ function GitHubRepoInfo({ owner, repoName }) {
                 </p>
             )}
 
-            {repo && !isLoading && !errorMessage && (
+            {repo && !errorMessage && (
                 <RepoCard repo={repo} />
             )}
 

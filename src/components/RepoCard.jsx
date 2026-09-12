@@ -1,6 +1,6 @@
 function RepoCard({ repo }) {
     return (
-        <div className="repo-info__card">
+        <article className="repo-info__card">
             <h3>{repo.name}</h3>
 
             <p>
@@ -11,7 +11,7 @@ function RepoCard({ repo }) {
                 <span>⭐ Stars: {repo.stargazers_count}</span>
                 <span>⑂ Forks: {repo.forks_count}</span>
             </div>
-        </div>
+        </article>
     );
 }
 
