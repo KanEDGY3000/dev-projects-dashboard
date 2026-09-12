@@ -1,5 +1,6 @@
 import ProjectsCard from "./ProjectCard.jsx";
 import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses.js";
+import SectionHeader from "./SectionHeader.jsx";
 import { projects } from "../data/projects.js";
 
 function ProjectsList({
@@ -11,14 +12,12 @@ function ProjectsList({
 }) {
     return (
         <section className="projects-section">
-            <div className="section-header">
-                <p className="eyebrow">Portfolio progress</p>
-
-                <h2>Проекты</h2>
-
-                <p>Здесь собраны учебные и портфолио-проеты, которые показывают рост frontend-навыков</p>
-
-            </div>
+            <SectionHeader
+                eyebrow="GitHub API"
+                title="Информация о репозитории"
+            >
+                Здесь собраны учебные и портфолио-проеты, которые показывают рост frontend-навыков
+            </SectionHeader>
 
             <div className="status-filters" aria-label="Фильтр проектов по статусу">
                 {PROJECT_STATUS_FILTERS.map((filter) => (

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useRepositoryInfo } from '../hooks/useRepositoryInfo.js';
 import RepoSearchForm from './RepoSearchForm.jsx';
 import RepoCard from './RepoCard.jsx';
+import SectionHeader from './SectionHeader.jsx';
 
 function GitHubRepoInfo({ owner, repoName }) {
-    
+
     const [ownerInput, setOwnerInput] = useState('');
     const [repoNameInput, setRepoNameInput] = useState('');
 
@@ -20,7 +21,7 @@ function GitHubRepoInfo({ owner, repoName }) {
         loadRepo,
     } = useRepositoryInfo(activeRepository);
 
-    const isSearchDisabled = 
+    const isSearchDisabled =
         isLoading ||
         ownerInput.trim() === '' ||
         repoNameInput.trim() === '';
@@ -46,9 +47,10 @@ function GitHubRepoInfo({ owner, repoName }) {
 
     return (
         <section className="repo-info">
-            <p className="eyebrow">GitHub API</p>
-
-            <h2>Информация о репозитории</h2>
+            <SectionHeader
+                eyebrow="GitHub API"
+                title="Информация о репозитории"
+            />
 
             <p className='repo-info__current'>
                 Сейчас открыт: {activeRepository.owner} / {activeRepository.repoName}
@@ -83,13 +85,13 @@ function GitHubRepoInfo({ owner, repoName }) {
                 <h3>Загрузить другой репозиторий</h3>
 
                 <RepoSearchForm
-                ownerInput={ownerInput}
-                repoNameInput={repoNameInput}
-                onOwnerInputChange={setOwnerInput}
-                onRepoNameInputChange={setRepoNameInput}
-                onSubmit={handleSubmit}
-                isLoading={isLoading}
-                isSearchDisabled={isSearchDisabled}
+                    ownerInput={ownerInput}
+                    repoNameInput={repoNameInput}
+                    onOwnerInputChange={setOwnerInput}
+                    onRepoNameInputChange={setRepoNameInput}
+                    onSubmit={handleSubmit}
+                    isLoading={isLoading}
+                    isSearchDisabled={isSearchDisabled}
                 />
             </div>
         </section>
