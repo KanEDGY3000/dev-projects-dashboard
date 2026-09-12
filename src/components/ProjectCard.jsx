@@ -44,7 +44,10 @@ function ProjectsCard({ project, isCompactView }) {
                 >
                     Открыть GitHub
                 </a>) : (
-                <span className="project-card__link project-card__link--disabled">
+                <span 
+                    className="project-card__link project-card__link--disabled"
+                    aria-disabled="true"  
+                >
                     Репозиторий недоступен
                 </span>
             )}

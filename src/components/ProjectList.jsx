@@ -29,6 +29,7 @@ function ProjectsList({
                 className="view-toggle"
                 type="button"
                 onClick={onViewToggle}
+                aria-pressed={isCompactView}
             >
                 {isCompactView ? 'Обычный вид' : 'Компактный вид'}
             </button>
