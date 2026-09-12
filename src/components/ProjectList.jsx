@@ -20,19 +20,22 @@ function ProjectsList({
                 </p>
             </SectionHeader>
 
-            <ProjectStatusFilters
-                selectedStatus={selectedStatus}
-                onStatusChange={onStatusChange}
-            />
+            <div className="projects-controls">
+                <ProjectStatusFilters
+                    selectedStatus={selectedStatus}
+                    onStatusChange={onStatusChange}
+                />
 
-            <button
-                className="view-toggle"
-                type="button"
-                onClick={onViewToggle}
-                aria-pressed={isCompactView}
-            >
-                {isCompactView ? 'Обычный вид' : 'Компактный вид'}
-            </button>
+                <button
+                    className="view-toggle"
+                    type="button"
+                    onClick={onViewToggle}
+                    aria-pressed={isCompactView}
+                >
+                    {isCompactView ? 'Обычный вид' : 'Компактный вид'}
+                </button>
+            </div>
+
 
             {projects.length > 0 ? (
                 <div className="projects-grid">

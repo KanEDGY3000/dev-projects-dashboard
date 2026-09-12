@@ -240,6 +240,14 @@
   transform: translateY(-2px);
 }
 
+.projects-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+
 .status-filter--active {
   color: #020617;
   background-color: #38bdf8;
@@ -536,6 +544,20 @@ input:focus-visible {
   .repo-info__form {
     grid-template-columns: 1fr;
   }
+
+  .projects-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-filters {
+    width: 100%;
+  }
+
+  .view-toggle {
+    width: fit-content;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 560px) {
@@ -567,6 +589,11 @@ input:focus-visible {
   }
 
   .status-filters {
+    align-items: stretch;
+  }
+
+  .projects-controls {
+    flex-direction: column;
     align-items: stretch;
   }
 
