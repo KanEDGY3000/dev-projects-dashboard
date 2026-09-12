@@ -1,5 +1,5 @@
 import ProjectsCard from "./ProjectCard.jsx";
-import { PROJECT_STATUS_FILTERS } from "../data/projectStatuses.js";
+import ProjectStatusFilters from "./ProjectStatusFilters.jsx";
 import SectionHeader from "./SectionHeader.jsx";
 import { projects } from "../data/projects.js";
 
@@ -19,22 +19,10 @@ function ProjectsList({
                 Здесь собраны учебные и портфолио-проеты, которые показывают рост frontend-навыков
             </SectionHeader>
 
-            <div className="status-filters" aria-label="Фильтр проектов по статусу">
-                {PROJECT_STATUS_FILTERS.map((filter) => (
-                    <button
-                        className={
-                            selectedStatus === filter.value
-                                ? 'status-filter status-filter--active'
-                                : 'status-filter'
-                        }
-                        key={filter.value}
-                        type="button"
-                        onClick={() => onStatusChange(filter.value)}
-                    >
-                        {filter.label}
-                    </button>
-                ))}
-            </div>
+            <ProjectStatusFilters
+                selectedStatus={selectedStatus}
+                onStatusChange={onStatusChange}
+            />
 
             <button
                 className="view-toggle"
