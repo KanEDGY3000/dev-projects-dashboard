@@ -17,27 +17,38 @@ function ProjectStats({ projects }) {
         (project) => project.status === PROJECT_STATUSES.planned
     ).length;
 
+    const stats = [
+        {
+            id: 'total',
+            value: totalProjects,
+            label: 'Всего проектов',
+        },
+        {
+            id: 'completed',
+            value: completedProjects,
+            label: 'Завершено',
+        },
+        {
+            id: 'in-progress',
+            value: inProgressProjects,
+            label: 'В работе',
+        },
+        {
+            id: 'planned',
+            value: plannedProject,
+            label: 'Запланировано',
+        },
+    ]
+
     return (
         <section className="project-stats" aria-label="Статистика проектов">
-            <ProjectStat
-                value={totalProjects}
-                label="Всего проектов"
-            />
-
-            <ProjectStat
-                value={completedProjects}
-                label="Завершено"
-            />
-
-            <ProjectStat
-                value={inProgressProjects}
-                label="В работе"
-            />
-
-            <ProjectStat
-                value={plannedProject}
-                label="Запланированно"
-            />
+            {stats.map((stats) => (
+                <ProjectStat
+                    key={stats.id}
+                    value={stats.value}
+                    label={stats.label}
+                />
+            ))}
         </section>
     );
 }

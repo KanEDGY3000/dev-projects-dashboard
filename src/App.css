@@ -267,6 +267,7 @@
   font-size: 40px;
   font-weight: 800;
   color: #f8fafc;
+  justify-self: center;
 }
 
 .project-stat__label {
