@@ -60,13 +60,16 @@ function GitHubRepoInfo({ owner, repoName }) {
             </p>
 
             {isLoading && (
-                <p className="repo-info__message">
+                <p className="repo-info__message" role='status'>
                     Загружаем данные репозитория...
                 </p>
             )}
 
             {errorMessage && (
-                <p className="repo-info__message repo-info__message--error">
+                <p
+                    className="repo-info__message repo-info__message--error"
+                    role='alert'
+                >
                     {errorMessage}
                 </p>
             )}

@@ -506,3 +506,10 @@
 .repo-info__current strong {
   color: #e0f2fe;
 }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgb(14 165 233 / 0.7);
+  outline-offset: 3px;
+}
