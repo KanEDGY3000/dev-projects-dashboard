@@ -1,5 +1,6 @@
 
 import { PROJECT_STATUSES } from "../data/projectStatuses.js";
+import ProjectStat from "./ProjectStat.jsx";
 
 function ProjectStats({ projects }) {
     const totalProjects = projects.length;
@@ -18,38 +19,25 @@ function ProjectStats({ projects }) {
 
     return (
         <section className="project-stats" aria-label="Статистика проектов">
-            <article className="project-stat">
-                <span className="project-stat__value">
-                    {totalProjects}
-                </span>
+            <ProjectStat
+                value={totalProjects}
+                label="Всего проектов"
+            />
 
-                <span className="project-stat__label">Всего проектов</span>
-            </article>
+            <ProjectStat
+                value={completedProjects}
+                label="Завершено"
+            />
 
-            <article className="project-stat">
-                <span className="project-stat__value">
-                    {completedProjects}
-                </span>
+            <ProjectStat
+                value={inProgressProjects}
+                label="В работе"
+            />
 
-                <span className="project-stat__label">Завершено</span>
-            </article>
-
-            <article className="project-stat">
-                <span className="project-stat__value">
-                    {inProgressProjects}
-                </span>
-
-                <span className="project-stat__label">В работе</span>
-            </article>
-
-            <article className="project-stat">
-                <span className="project-stat__value">
-                    {plannedProject}
-                </span>
-
-                <span className="project-stat__label">Запланированно</span>
-            </article>
-
+            <ProjectStat
+                value={plannedProject}
+                label="Запланированно"
+            />
         </section>
     );
 }
