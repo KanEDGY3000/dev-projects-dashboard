@@ -462,6 +462,11 @@
   outline: none;
 }
 
+.repo-info__form input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .repo-info__form input:focus {
   border-color: #38bdf8;
   box-shadow: 0 0 0 3px rgb(56 189 248 / 0.16);

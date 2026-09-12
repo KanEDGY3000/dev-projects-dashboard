@@ -16,6 +16,8 @@ function RepoSearchForm({
                     value={ownerInput}
                     onChange={(event) => onOwnerInputChange(event.target.value)}
                     placeholder="Например: facebook"
+                    disabled={isLoading}
+                    autoComplete="off"
                 />
             </label>
 
@@ -26,6 +28,8 @@ function RepoSearchForm({
                     value={repoNameInput}
                     onChange={(event) => onRepoNameInputChange(event.target.value)}
                     placeholder="Например: react"
+                    disabled={isLoading}
+                    autoComplete="off"
                 />
             </label>
 
