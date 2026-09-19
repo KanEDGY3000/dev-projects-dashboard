@@ -1,16 +1,73 @@
-# React + Vite
+# Dev Projects Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React-приложение для отслеживания учебных и портфолио-проектов frontend-разработчика.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- просмотр списка проектов;
+- фильтрация проектов по статусу;
+- обычный и компактный режим отображения;
+- сохранение настроек интерфейса в localStorage;
+- статистика проектов;
+- загрузка информации о GitHub-репозитории через GitHub API;
+- поиск другого GitHub-репозитория по owner и названию;
+- обработка состояний загрузки и ошибок;
+- адаптивный интерфейс.
 
-## React Compiler
+## Технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- Vite
+- CSS
+- GitHub API
+- localStorage
 
-## Expanding the ESLint configuration
+## Что я изучил в этом проекте
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Во время разработки проекта я практиковал:
+
+- React-компоненты;
+- JSX;
+- props и children;
+- useState;
+- useEffect;
+- useCallback;
+- custom hooks;
+- controlled inputs;
+- условный рендеринг;
+- рендеринг списков через map;
+- derived data;
+- работу с API;
+- loading и error states;
+- разделение UI, React-логики и API-логики;
+- адаптивную верстку;
+- базовую accessibility;
+- Git и GitHub.
+
+## Структура проекта
+
+```text
+src/
+├── api/
+│   └── github.js
+├── components/
+│   ├── GitHubRepoInfo.jsx
+│   ├── Hero.jsx
+│   ├── ProjectCard.jsx
+│   ├── ProjectList.jsx
+│   ├── ProjectStat.jsx
+│   ├── ProjectStats.jsx
+│   ├── ProjectStatusFilters.jsx
+│   ├── RepoCard.jsx
+│   ├── RepoSearchForm.jsx
+│   └── SectionHeader.jsx
+├── data/
+│   ├── projects.js
+│   └── projectStatuses.js
+├── hooks/
+│   └── useRepositoryInfo.js
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
