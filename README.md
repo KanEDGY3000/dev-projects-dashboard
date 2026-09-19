@@ -71,3 +71,56 @@ src/
 ├── App.css
 ├── index.css
 └── main.jsx
+
+```
+### Основные части
+
+- `components` — React-компоненты интерфейса;
+- `data` — данные проектов и статусы;
+- `api` — функции для работы с GitHub API;
+- `hooks` — переиспользуемая React-логика;
+- `App.jsx` — основной компонент приложения.
+
+## Запуск проекта локально
+
+Клонировать репозиторий:
+
+```bash
+git clone https://github.com/KanEDGY3000/dev-projects-dashboard.git
+```
+
+Перейти в папку проекта:
+
+```bash
+cd dev-projects-dashboard
+```
+
+Установить зависимости:
+
+```bash
+npm install
+```
+
+Запустить dev-сервер:
+
+```bash
+npm run dev
+```
+
+## Production build
+
+Для создания production-сборки:
+
+```bash
+npm run build
+```
+
+Для проверки кода:
+
+```bash
+npm run lint
+```
+
+## Live Demo
+
+[Открыть проект](https://dev-projects-dashboard.vercel.app/)
